@@ -7,6 +7,7 @@ resource ibm_is_lb lb {
     subnets        = var.subnet_list
     type           = var.type
     resource_group = var.resource_group_id
+    profile = "network-fixed"
 }
 
 ##############################################################################
