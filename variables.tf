@@ -10,7 +10,7 @@ variable ibmcloud_api_key {
 variable ibm_region {
   description = "IBM Cloud region where all resources will be deployed"
   type        = string
-  default     = "us-south"
+  default     = "br-sao"
 }
 
 variable generation {
@@ -121,13 +121,13 @@ variable unique_id {
 variable type {
     description = "Load Balancer type, can be public or private"
     type        = string
-    default     = "public"
+    default     = "private"
 }
 
 variable listener_port {
     description = "Listener port"
     type       = number
-    default     = 80
+    default     = 443
 }
 
 ##############################################################################
@@ -140,7 +140,7 @@ variable listener_port {
 variable listener_protocol {
     description = "The listener protocol. Supported values are http, tcp, and https"
     type        = string
-    default     = "http"
+    default     = "tcp"
 }
 
 variable certificate_instance {
@@ -207,7 +207,7 @@ variable health_type {
 
 variable pool_member_port {
     description = "The port number of the application running in the server member."
-    default     = 80
+    default     = 443
 }
 
 ##############################################################################
