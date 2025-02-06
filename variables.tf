@@ -44,71 +44,71 @@ variable unique_id {
 # VSI Variables
 ##############################################################################
 
-variable image {
-  description = "Image name used for VSI. Run 'ibmcloud is images' to find available images in a region"
-  type        = string
-  default     = "ibm-ubuntu-18-04-1-minimal-amd64-1"
-}
+#variable image {
+#  description = "Image name used for VSI. Run 'ibmcloud is images' to find available images in a region"
+#  type        = string
+#  default     = "ibm-ubuntu-18-04-1-minimal-amd64-1"
+#}
 
-variable subnet_ids {
-  description = "A list of subnet ids where VSI will be deployed. Must exist within the VPC"
-  type        = list(string)
-  default     = [
-  ]
-}
+#variable subnet_ids {
+#  description = "A list of subnet ids where VSI will be deployed. Must exist within the VPC"
+#  type        = list(string)
+#  default     = [
+#  ]
+#}
 
-variable vsi_per_subnet {
-    description = "Number of VSI instances for each subnet. All VSI will be connected by a single load balancer"
-    type        = number
-    default     = 2
-}
+#variable vsi_per_subnet {
+#    description = "Number of VSI instances for each subnet. All VSI will be connected by a single load balancer"
+#    type        = number
+#    default     = 2
+#}
 
-variable ssh_public_key {
-  description = "ssh public key to use for vsi"
-  type        = string
-}
+#variable ssh_public_key {
+#  description = "ssh public key to use for vsi"
+#  type        = string
+#}
 
-variable machine_type {
-  description = "VSI machine type. Run 'ibmcloud is instance-profiles' to get a list of regional profiles. For Gen 1 use bc1-2x8, for Gen 2 use bx2-2x8"
-  type        =  string
-  default     = "bc1-2x8"
-}
+#variable machine_type {
+#  description = "VSI machine type. Run 'ibmcloud is instance-profiles' to get a list of regional profiles. For Gen 1 use bc1-2x8, for Gen 2 use bx2-2x8"
+#  type        =  string
+#  default     = "bc1-2x8"
+#}
 
 
-variable enable_fip {
-  description = "Enable floating IP. Can be true or false"
-  type        = bool
-  default     = false
-}
+#variable enable_fip {
+#  description = "Enable floating IP. Can be true or false"
+#  type        = bool
+#  default     = false
+#}
 
-variable volumes {
-  description = "A list of maps describng the volumes for each of the VSI"
-  /*
-  type         = list(object({
-      name           = string   
-      profile        = string
-      iops           = number       # Optional
-      capacity       = number       # Optional
-      encryption_key = string       # Optional
-      tags           = list(string) # Optional
-  }))
-  */
-  default     = [
-    {
-      name     = "one"
-      profile  = "10iops-tier"
-      capacity = 25
-    },
-    {
-      name    = "two"
-      profile = "10iops-tier"
-    },
-    {
-      name    = "three"
-      profile = "10iops-tier"
-    }
-  ]
-}
+#variable volumes {
+#  description = "A list of maps describng the volumes for each of the VSI"
+#  /*
+#  type         = list(object({
+#      name           = string   
+#      profile        = string
+#      iops           = number       # Optional
+#      capacity       = number       # Optional
+#      encryption_key = string       # Optional
+#      tags           = list(string) # Optional
+#  }))
+#  */
+#  default     = [
+#    {
+#      name     = "one"
+#      profile  = "10iops-tier"
+#      capacity = 25
+#    },
+#    {
+#      name    = "two"
+#      profile = "10iops-tier"
+#    },
+#    {
+#      name    = "three"
+#      profile = "10iops-tier"
+#    }
+#  ]
+#}
 
 
 ##############################################################################

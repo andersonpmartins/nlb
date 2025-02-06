@@ -16,9 +16,9 @@ provider ibm {
 # VPC Data Block
 ##############################################################################
 
-data ibm_is_vpc vpc {
-    name = var.vpc_name
-}
+#data ibm_is_vpc vpc {
+#    name = var.vpc_name
+#}
 
 ##############################################################################
 
@@ -49,20 +49,20 @@ data ibm_is_subnet subnet {
 # Create VSI
 ##############################################################################
 
-module vsi {
-  source            = "./vsi_module"
-  unique_id         = var.unique_id
-  image             = var.image
-  ssh_public_key    = var.ssh_public_key  
-  machine_type      = var.machine_type
-  vsi_per_subnet    = var.vsi_per_subnet
-  enable_fip        = var.enable_fip  
-  resource_group_id = data.ibm_resource_group.group.id
-  vpc_id            = data.ibm_is_vpc.vpc.id
-  subnet_zones      = data.ibm_is_subnet.subnet.*.zone
-  subnet_ids        = var.subnet_ids
-  volumes           = var.volumes
-}
+#module vsi {
+#  source            = "./vsi_module"
+#  unique_id         = var.unique_id
+#  image             = var.image
+#  ssh_public_key    = var.ssh_public_key  
+#  machine_type      = var.machine_type
+#  vsi_per_subnet    = var.vsi_per_subnet
+#  enable_fip        = var.enable_fip  
+#  resource_group_id = data.ibm_resource_group.group.id
+#  vpc_id            = data.ibm_is_vpc.vpc.id
+#  subnet_zones      = data.ibm_is_subnet.subnet.*.zone
+#  subnet_ids        = var.subnet_ids
+#  volumes           = var.volumes
+#}
 
 ##############################################################################
 
